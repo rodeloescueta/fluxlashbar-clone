@@ -129,7 +129,7 @@ export function WhyChooseUsSection() {
                 personal preference, lifestyle, eyes and face ratios, our
                 specialists will help you to choose the style that fits you the
                 most. We have the perfect options for your eye and face shape.
-                We've got the most in the industry!
+                We&apos;ve got the most in the industry!
               </p>
             </motion.div>
           </motion.div>

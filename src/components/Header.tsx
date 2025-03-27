@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 // Define navigation links to match the provided image
 const navigationLinks = [
@@ -41,29 +40,8 @@ const navigationLinks = [
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
   const pathname = usePathname();
-
-  // Handle scroll effect for transparent to solid header
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    // Initial check in case page is loaded scrolled down
-    handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   // Close mobile menu when navigating
   useEffect(() => {
@@ -75,7 +53,7 @@ export default function Header() {
   };
 
   return (
-    <header className={`sticky top-0 z-50 w-full bg-white shadow-sm`}>
+    <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
       {/* Top info bar */}
       <div className="bg-gray-100 py-2 px-4 text-center text-sm text-gray-700">
         <p>
